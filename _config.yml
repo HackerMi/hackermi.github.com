@@ -1,0 +1,19 @@
+#Site config
+root: /
+permalink: /:year-:month/:title/
+markdown: rdiscount
+highlighter: true
+paginate: 5
+title: HackerMi's Blog
+description: HakcerMi's Tech & Life 
+keywords: HackerMi
+url: http://www.hackermi.com
+favicon: http://www.hackermi.com/static/favicon.ico
+
+#Author config
+author:
+  name: HackerMi
+  email: hackermi@163.com
+  simpleIntro: 热爱产品&技术，热爱生活
+  detailIntro: 这里记录了我对产品和技术的理解，记录了我的生活，欢迎分享交流
+

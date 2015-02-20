@@ -34,6 +34,25 @@ h3 {
   margin: 0 auto;
   background-color: #f7f7f7;
 }
+
+.ads-top {
+  position:absolute;
+  left:450px;
+  top:36px
+}
+
+.ads-right {
+  position:absolute;
+  right:10px;
+  top:200px
+}
+
+.ads-left {
+  position:absolute;
+  left:10px;
+  top:200px
+}
+
 .page-heading {
   border-top: 2px solid #bbb;
   padding-bottom: 10px;

@@ -11,9 +11,13 @@ url: http://www.hackermi.com
 favicon: http://www.hackermi.com/static/favicon.ico
 feed: /atom.xml
 
+
 #Author config
 author:
   name: HackerMi
   email: hackermi@163.com
 
+#Google Config
+google:
+  adsense_config: false
 

@@ -5,7 +5,7 @@ categories: tech
 tags:  博客技术 jekyll markdown github_page
 ---
 
-学习Bootstrap 搭建类似 [java wiki](http://zh.wikipedia.org/wiki/Java) 的目录页
+学习Bootstrap 搭建类似 [java wiki](http://zh.wikipedia.org/wiki/Java) 或 [CSDN](http://blog.csdn.net/wirelessqa/article/details/22725581#t1)的目录页
 
 现在这个框架使用的是Bootstrap 2.1，更换新的框架后标签的染色会丢失，需要进一步分析。
 

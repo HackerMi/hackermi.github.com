@@ -7,6 +7,10 @@ tags:  Android AOA USB_Accessory
 ###1. 背景介绍
 &emsp;2011年Google推出Android开放配件协议AOA（Android Open Accessory Protocol）及配件开发工具包ADK（Accessory Development Kit）。当时开源硬件和硬件创业都比较热，其中以[Arduino平台](http://baike.baidu.com/view/1268436.htm)为代表。Google想借着这个硬件平台开拓智能家具的市场，借此推出了AOA协议和对应的开发平台，以便打通Android手机和周边硬件的连接通道，从而扩大Android的生态链。2012年Google推出了2.0版本的协议，增加了音频相关的支持，随后没有进一步的更新。从目前的状况看，这个协议并没有被广泛的认可和使用。最近的消息是2014年Google发布的Android Auto基于该协议构建了Android Auto Porotocol，Google未来可能会将其作为Android系统与周边硬件进行USB连接的基础协议。  
 &emsp;更多背景资料请参考[Google 2011 I/O大会视频](http://pan.baidu.com/s/1hqIigaK)， 其中36分后开始介绍AOA。下面主要针对AOA协议及其开发进行分析和介绍。
+
+<!--more-->
+
+
 ###2. 协议分析
 ####2.1 Android 系统与配件的连接方式
 

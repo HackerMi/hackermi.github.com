@@ -14,7 +14,7 @@
 	{% unless page.title contains '【转载】' %}
 	<span><i class="fa fa-ellipsis-v"></i></span>
 	<span>
-	   版权信息: 【自由转载-非商用-非衍生-<a href="/about.html">保持署名</a>】
+	   版权信息: 【自由转载-非商用-非衍生-保持署名】
 	</span>
 	{% endunless %}
 </div>

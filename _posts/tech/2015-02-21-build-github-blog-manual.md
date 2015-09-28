@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitHub搭建博客指南
+title: 使用Jekyll和GitHub Pages搭建博客原理、方法和资源
 categories: tech
 tags:  GitHub Git jekyll markdown blog 博客
 ---
@@ -102,7 +102,8 @@ Jekyll官方文档推荐通过Ruby Gem安装，所以需要安装Ruby开发环�
  主机记录 | 记录类型 | 线路类型 | 记录值   |权重 | MX优先级 |	TTL
 :--------:|:--------:|:--------:|:--------:|:---:|:--------:|:--------:
    www    |  CNAME   |  默认    |GitHub网址| -   |  -       | 600
-   
+
+
 详细教程参见[这里](http://jingyan.baidu.com/article/6181c3e04b5f2e152ef15321.html)。
 
 最后，需要让GitHub知道你的域名，只需在项目的根目录下创建CNAME文件，并且填写域名即可，详细操作请参考[这里](http://jingyan.baidu.com/article/36d6ed1f5356f31bcf488314.html)
@@ -110,28 +111,30 @@ Jekyll官方文档推荐通过Ruby Gem安装，所以需要安装Ruby开发环�
 ## 五、博客建设
 这里主要整理一些有用的博客资源，以及日常使用技巧。
 
-####Jekyll & MarkDown使用技巧
+####1. Jekyll & MarkDown使用技巧
 
-####常用的全局变量
+####1.1 常用的全局变量
+<br/>
 
 变量|描述
-:--------:|:--------:
+:--------|:--------
 layout|如果设置了，则指定了所使用的布局文件，使用不带后缀名的布局文件名作为值。布局文件必须放在_layouts 目录中。
 permalink|如果你希望当前文章的永久链接不同于默认的 /year/month/day/title.html 形式，则可设置该变量，它将作为最后生成文章的 URL。
 published|如果你不想让某篇文章在生成的站点中出现，可将此变量设置为 false。
 category/categories|可以指定一个或多个该文章所属的类别，可以以 YAML 列表的形式指定。
 tags|与文章类别类似，也可以为文章指定一个或多个标签，同样适用 YAML 列表或空格分隔的字符串。
 
-####发布草稿常用方法
+####1.2 发布草稿常用方法
 * 在_post目录下的文章的YAML列表中增加 published 并设置为 false。
 * 在根目录下创建_drafts目录，讲草稿文件放置在这个目录下使用jekyll s --drafts 讲_drafts目录下的文件加入网站编译，更多参考[这里](http://jekyllcn.com/docs/drafts/)
 
-####[实现页内跳转的方法](http://www.cnblogs.com/JohnTsai/p/4027229.html#1.2)
+####1.3 [实现页内跳转的方法](http://www.cnblogs.com/JohnTsai/p/4027229.html#1.2)
+  
+####1.4 MarkDown的换行需要在行尾追加两个空格
+  
+####1.5 [MarkDown首行缩进的方法](http://metman.info/blog/2013/02/27/markdownru-men/)
 
-####MarkDown的换行需要在行尾追加两个空格
-####[MarkDown首行缩进的方法](http://metman.info/blog/2013/02/27/markdownru-men/)
-
-#### Blog 模板
+####2. Blog 模板
   
 * [Jekyll主题网站](http://jekyllthemes.org/)  
 * [简洁明快风格](http://www.zhihu.com/question/20223939)  

@@ -2,7 +2,7 @@
 layout: post
 title: 使用Jekyll和GitHub Pages搭建博客原理、方法和资源
 categories: tech
-tags:  GitHub Git jekyll markdown blog 博客
+tags:  GitHub Git jekyll markdown blog 博客技术
 ---
 
 ## 一、缘起

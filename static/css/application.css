@@ -5,7 +5,7 @@
  */
 body {
   font-family: "PT Serif", Georgia, "Microsoft YaHei", Arial, sans-serif;
-  background: url("/static/img/light.png") repeat fixed;
+  background-color: #f7f7f7;
 }
 li.L4 {
   list-style-type: none;

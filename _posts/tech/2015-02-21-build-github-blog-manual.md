@@ -6,8 +6,10 @@ tags:  GitHub Git jekyll markdown blog 博客技术
 ---
 
 ## 一、缘起
-&emsp;从大学到现在一直有记录自己生活的习惯，不过形式一直在变。大学时因为网易邮箱的缘故，顺便就用网易博客记录了。毕业后，工作一直比较忙，干脆用记事本偶尔写写。来北京后，尝试过新浪微博，新浪博客等。这些年折腾下来，基本算是业余博客写作爱好者。  
-&emsp;早在13年就看到可以用github写博客，但因自己的懈怠，一直没有真正建起来。只是心血来潮的申请了一个好玩的域名，搞了一个测试页面，便荒废在那里。一转眼2年过去了，已是而立之年的我，貌似没有什么像样的东西。唯一的安慰就是自己还算努力，研究了不少东西，但疏于整理，一直荒废在电脑的某个文件夹里。新的一年打算给他们安个家，温故知新，输出一些有价值的东西。先从搭建GitHub博客开始，闲言少叙，开始正题。
+从大学到现在一直有记录自己生活的习惯，不过形式一直在变。大学时因为网易邮箱的缘故，顺便就用网易博客记录了。毕业后，工作一直比较忙，干脆用记事本偶尔写写。来北京后，尝试过新浪微博，新浪博客等。这些年折腾下来，基本算是业余博客写作爱好者。  
+
+
+早在13年就看到可以用github写博客，但因自己的懈怠，一直没有真正建起来。只是心血来潮的申请了一个好玩的域名，搞了一个测试页面，便荒废在那里。一转眼2年过去了，已是而立之年的我，貌似没有什么像样的东西。唯一的安慰就是自己还算努力，研究了不少东西，但疏于整理，一直荒废在电脑的某个文件夹里。新的一年打算给他们安个家，温故知新，输出一些有价值的东西。先从搭建GitHub博客开始，闲言少叙，开始正题。
 ## 二、基本概念
 相较其他博客，GitHub上搭建博客有一定的技术门槛，需要自己动手摸索。对于不做前端开发的人来说，还是有些陌生。这里先说说自己对一些技术概念的理解。
 
@@ -95,9 +97,9 @@ Jekyll官方文档推荐通过Ruby Gem安装，所以需要安装Ruby开发环�
 ####独立域名的申请和挂接GitHub
 说到域名申请首推Godaddy，国内的域名提供商不太靠谱。现在Godaddy支持支付宝了，购买域名也十分方便，这里找到一篇[百度经验](http://jingyan.baidu.com/article/a3aad71a80b3c4b1fa009649.html)不错，大家照做即可。  
     
-    注意：网上有很多Godaddy优惠码，个人建议不要用，因为Godaddy后续会要求你上传身份证护照等信息所谓代价。
+    注意：网上有很多Godaddy优惠码，个人建议不要用，因为Godaddy后续会要求你上传身份证护照等信息作为代价。
 
-买完域名后，一般会找一个DNS服务商为你提供域名解析相关的服务，比如域名解析次数统计，域名安全等。当然这些不是必须的，不过国内有免费的域名服务商而且做的不错，而且帮你解决了电信，网通，教育网互通的问题，何乐而不为。这里推荐[DNSPod](https://www.dnspod.cn/), 配置很简单，只需添加一条UNAME记录即可：
+买完域名后，一般会找一个DNS服务商为你提供域名解析相关的服务，比如域名解析次数统计，域名安全等。当然这些不是必须的，不过国内有免费的域名服务商而且做的不错，还帮你解决了电信，网通，教育网互通的问题，何乐而不为。这里推荐[DNSPod](https://www.dnspod.cn/), 配置很简单，只需添加一条UNAME记录即可：
 
  主机记录 | 记录类型 | 线路类型 | 记录值   |权重 | MX优先级 |	TTL
 :--------:|:--------:|:--------:|:--------:|:---:|:--------:|:--------:
@@ -111,10 +113,10 @@ Jekyll官方文档推荐通过Ruby Gem安装，所以需要安装Ruby开发环�
 ## 五、博客建设
 这里主要整理一些有用的博客资源，以及日常使用技巧。
 
-####1. Jekyll & MarkDown使用技巧
+---
+####Jekyll使用技巧
 
-####1.1 常用的全局变量
-<br/>
+常用的全局变量
 
 变量|描述
 :--------|:--------
@@ -124,56 +126,43 @@ published|如果你不想让某篇文章在生成的站点中出现，可将此�
 category/categories|可以指定一个或多个该文章所属的类别，可以以 YAML 列表的形式指定。
 tags|与文章类别类似，也可以为文章指定一个或多个标签，同样适用 YAML 列表或空格分隔的字符串。
 
-####1.2 发布草稿常用方法
+发布草稿常用方法
+
 * 在_post目录下的文章的YAML列表中增加 published 并设置为 false。
-* 在根目录下创建_drafts目录，讲草稿文件放置在这个目录下使用jekyll s --drafts 讲_drafts目录下的文件加入网站编译，更多参考[这里](http://jekyllcn.com/docs/drafts/)
+* 在根目录下创建 _ drafts目录，讲草稿文件放置在这个目录下使用jekyll s --drafts 讲 _ drafts目录下的文件加入网站编译，更多参考[这里](http://jekyllcn.com/docs/drafts/)
 
-####1.3 [实现页内跳转的方法](http://www.cnblogs.com/JohnTsai/p/4027229.html#1.2)
-  
-####1.4 MarkDown的换行需要在行尾追加两个空格
-  
-####1.5 [MarkDown首行缩进的方法](http://metman.info/blog/2013/02/27/markdownru-men/)
+---
+####MarkDown使用技巧
+* [实现页内跳转的方法](http://www.cnblogs.com/JohnTsai/p/4027229.html#1.2)
+* 换行方法：在行尾追加两个空格在换行
+* [MarkDown首行缩进的方法](http://metman.info/blog/2013/02/27/markdownru-men/)
 
-####2. Blog 模板
+----
+####博客资源
+
+Markdown 免费编辑器  
+个人比较推荐在线编辑器Markable.in，所有平台都通用，云存储。
+
+* Windows 平台 [MarkdownPad](http://markdownpad.com/), [MarkPad](http://code52.org/DownmarkerWPF/)
+* Linux 平台 [ReText](http://sourceforge.net/p/retext/home/ReText/)
+* Mac 平台 [Mou](http://mouapp.com/)
+* 在线编辑器 [Markable.in](http://markable.in/), [Dillinger.io](http://dillinger.io/)
+* 浏览器插件 [MaDe](https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog) (Chrome)
+* 高级应用 [Sublime Text 2](http://www.sublimetext.com/2) + [MarkdownEditing](http://ttscoff.github.com/MarkdownEditing/) / [教程](http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/)
+
+Blog 模板
   
 * [Jekyll主题网站](http://jekyllthemes.org/)  
 * [简洁明快风格](http://www.zhihu.com/question/20223939)  
 * [优雅风格](http://www.zhanxin.info/themes.html)   
 
-#### Markdown 免费编辑器
-个人比较推荐在线编辑器Markable.in，所有平台都通用，云存储。
-
-Windows 平台
-
-* [MarkdownPad](http://markdownpad.com/)
-* [MarkPad](http://code52.org/DownmarkerWPF/)
-
-Linux 平台
-
-* [ReText](http://sourceforge.net/p/retext/home/ReText/)
-
-Mac 平台
-
-* [Mou](http://mouapp.com/)
-
-在线编辑器
-
-* [Markable.in](http://markable.in/)
-* [Dillinger.io](http://dillinger.io/)
-
-浏览器插件
-
-* [MaDe](https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog) (Chrome)
-
-高级应用
-
-* [Sublime Text 2](http://www.sublimetext.com/2) + [MarkdownEditing](http://ttscoff.github.com/MarkdownEditing/) / [教程](http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/)
-
-#### 博客评论工具
+博客评论工具  
 这里推荐Disqus，简单易用，详细教程参见[这里](http://blog.ihurray.com/blog/Disqus-learning.php)
 
-#### Font Awesome 网站图标集与使用
-[图标资源库](http://www.bootcss.com/p/font-awesome/)  
-[图标使用教程](http://fontawesome.dashgame.com/#basic)
+Font Awesome 网站图标集与使用  
 
-#### 网站CSS样式推荐使用Bootstrap，具体参见[官网](http://www.bootcss.com/)
+* [图标资源库](http://www.bootcss.com/p/font-awesome/)  
+* [图标使用教程](http://fontawesome.dashgame.com/#basic)
+
+网站CSS样式  
+推荐使用Bootstrap，具体参见[官网](http://www.bootcss.com/)

@@ -4,34 +4,163 @@
  * http://hushaw.github.io
  */
 body {
-  font-family: "PT Serif", Georgia, "Microsoft YaHei", Arial, sans-serif;
+  /*font-family: "PT Serif", Georgia, "Microsoft YaHei", Arial, sans-serif;*/
   background-color: #f7f7f7;
 }
 li.L4 {
   list-style-type: none;
 }
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #eee;
-  padding: 4px;
-  overflow: auto;
-}
+
 ::selection {
   background: #c3e99e;
   text-shadow: none;
 }
-h1,
-h2,
-h3 {
-  font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;
+
+
+/* 
+ * new style start.
+ * This is the common attribute definition  
+ */
+ 
+a{ 
+  color: #4183C4;
+  text-decoration: none;
 }
+a:visited{ color: #4183C4; }
+a:hover{
+  color: #4183C4; 
+  text-decoration: underline;
+}
+a:active{ 
+  color: #4183C4;
+  text-decoration: underline;
+}
+a:focus{outline: thin dotted #333;}
+
+
+p {
+/*margin: 0;
+margin-top:1em;
+margin-bottom:1em;*/
+line-height:1.4em;
+}
+
+img{
+max-width:100%;
+}
+
+.page-article h1, .page-article h2, .page-article h3, .page-article h4, .page-article h5, .page-article h6{
+font-weight:normal;
+line-height:1em;
+margin-top: 1.4em;
+margin-bottom: 1em;
+/*font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;*/
+}
+
+.page-article h1{ font-size:32px;}
+.page-article h2{ font-size:26px; }
+.page-article h3{ font-size:20px; }
+.page-article h4{ font-size:18px; }
+.page-article h5{ font-size:14px; }
+.page-article h6{ font-size:12px; }
+
+blockquote{
+color:#999;
+margin:0;
+padding-left: 20px;
+border-left: 5px #EEE solid;
+}
+
+hr { display: block; height: 1px; border: 0; border-top: 0px solid #aaa;border-bottom: 1px solid #ddd; margin: 1em 0; padding: 0; }
+pre, code, kbd, samp {
+  color: #666; 
+  font-family: "Menlo", "Consolas", "Courier New", "courier", monospace;
+  font-size: 12px; 
+}
+pre{ 
+  background-color: #f0f0f0;
+  border: 1px solid #ddd; 
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin:1.5em 0 1.5em 0;
+}
+
+pre code{
+  border: 0;
+}
+
+code{
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #DD1144;
+  line-height:1.8em;
+}
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+ 
+table {
+  border-collapse: collapse;
+  color: #000;
+  vertical-align: middle;
+  margin: 1.5em 0 1.5em 0;
+}
+ 
+table  th{
+  padding: 5px 10px;
+  border: solid 1px #eee;
+  background-color: #ddd;
+}
+  
+table td {
+  padding: 5px 10px;
+  border: solid 1px #eee;
+}
+
+.toc ul{
+    padding: 0px;
+}
+
+.toc ul li{
+    list-style-type: none;
+}
+
+#content{
+    margin: 40px 0;
+}
+
+.footer{
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color: #aaa;
+}
+/* new style end */
+
 .page-container {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 
 .ads-top {
@@ -120,7 +249,7 @@ h3 {
 }
 .page-header h2 {
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;
+  /*font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;*/
 }
 .page-content {
   border-bottom: 1px dashed #aaa;
@@ -137,7 +266,7 @@ h3 {
   line-height: 1.15em;
   padding-bottom: .5em;
   padding-top: 12px;
-  font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;
+  /*font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;*/
 }
 .page-content .post-heading a {
   color: #222;
@@ -191,7 +320,7 @@ h3 {
 }
 .page-list h3 {
   color: #428bca;
-  font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;
+  /*font-family: Georgia, "Times New Roman", Times, "Kai", "Kaiti SC", "KaiTi", "BiauKai", "楷体", "楷体_GB2312", serif;*/
 }
 .page-list ul {
   font-size: 15px;

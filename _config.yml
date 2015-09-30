@@ -3,7 +3,7 @@ root: /
 permalink: /:year-:month/:title/
 markdown: rdiscount
 highlighter: pygments
-paginate: 5
+paginate: 10
 title: HackerMi's Blog
 description: HakcerMi's Tech & Life 
 keywords: HackerMi

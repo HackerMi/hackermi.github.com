@@ -8,7 +8,7 @@
 	<span>
 		标签:
 		{% for tag in page.tags %}
-		<a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>
+		<a href="/tags#{{ tag }}-ref">{{ tag }}</a>
 		{% endfor %}
 	</span>
 	{% unless page.title contains '【转载】' %}

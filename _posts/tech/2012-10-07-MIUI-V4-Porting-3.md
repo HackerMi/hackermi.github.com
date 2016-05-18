@@ -12,10 +12,12 @@ tags:  MIUI Porting 移植 底包 ROM Smali 代码注入
 
 <!--more-->
 
-##应用场景
+## 应用场景
 
 Smali代码注入只能应对函数级别的移植，对于类级别的移植是无能为力的。具体的说，如果你想修改一个类的继承、包含关系，接口结构等是非常困难的。但对于修改类成员变量访问控制权限，类方法实现，Smali代码注入的方法是可以实现的。这主要是因为Samli级代码的灵活性已经远低于java源代码，而且经过编译优化后，更注重程序的执行效率。
-####Smali代码注入
+
+#### Smali代码注入
+
 本质上讲，Smali代码注入就是在已有APK或JAR包中插入一些Dalvik虚拟机的指令，从而改变原来程序执行的路径或行为。  
 这个过程大致分为五步——确定需要注入的Samli代码，确定注入位置，注入Smali代码，编译Smali代码，调试Smali代码。  
 总体流程如下图：
@@ -23,7 +25,9 @@ Smali代码注入只能应对函数级别的移植，对于类级别的移植是
 ![总览]({{ site.url }}/assets/miui_porting_3/overview.jpg)
 
 下面详细说明：  
-####确定需要注入的Smali代码
+
+#### 确定需要注入的Smali代码
+
 首先，确定基线文件——待移植的APK包或JAR包，使用APKTOOL反汇编，生成原始的Samli文件。  
 
 其次，修改对应的APK包或JAR包的java源代码，使用编译系统重新生成新的APK包或JAR包，并用APKTOOL反汇编，生成包含修改后的Samli文件。   
@@ -34,7 +38,8 @@ Smali代码注入只能应对函数级别的移植，对于类级别的移植是
 
 ![注入1]({{ site.url }}/assets/miui_porting_3/smali_inject_1.jpg)
 
-####确定注入位置
+#### 确定注入位置
+
 这一步的看似简单，实际工作中有很多难点，主要是有些注入位置比较难确定，需要不断的尝试。使用APKTOOL反汇编待注入的APK或JAR包后，
 
 首先需要确认需要注入的Smali文件是哪个。这个主要是针对含有匿名内部类的Java文件而言。例如，移植PhoneWindowManager.java文件的修改时，反汇编之后会有很多PhoneWindowManager$1.smali, PhoneWindowManager$2.smali...类似的文件。这些文件就是匿名内部类的Smali代码，由于没有名字，所以编译后只能用$XXX来区分。如果带注入的Smali代码是从PhoneWindowManager$5.smali提取的，一般不能够直接将其注入到目标机型的PhoneWindowManager$5.smali文件中，因为不同机型的匿名内部类顺序不同，实现不同，Smali文件也不同。一般需要通过逐个比较PhoneWindowManager$5.smali附近的几个文件的Smali代码，看看其函数调用，函数名字，类继承关系是否相同来确定注入哪个文件。当然对于没有匿名内部类的Java文件可以直接使用对应的Smali文件注入即可。 
@@ -47,7 +52,8 @@ Smali代码注入只能应对函数级别的移植，对于类级别的移植是
 
 图中有很多红色的不同，其中蓝框是我们刚才确定的需要注入的Samli代码。通过上下文匹配，可以发现绿框的位置是Samli代码需要注入的区域。尽管上下有很多指令和变量不同，但是这并不影响我们的工作。  
 
-####注入代码
+#### 注入代码
+
 首先，将待注入的Smali代码注入对应的区域。  
 
 其次，对注入的Smali代码进行“本地化”——修改变量、跳转标号、逻辑判断标号等，使之符合当前的Smali代码实现，完成“嫁接”工作。当然，如果情况很复杂，需要重写对应的Smali代码或者重构java源代码，来完成最终的代码注入。Dalvik 虚拟机每条指令含义请[参见这里](http://pallergabor.uw.hu/androidblog/dalvik_opcodes.html)。   
@@ -67,7 +73,8 @@ Smali代码注入只能应对函数级别的移植，对于类级别的移植是
 
 需要说明的是0x1开头的资源都是framework-res.apk中的资源，0x2开头的一般是厂商自己的资源，例如摩托的是moto-res.apk,HTC的是com.htc.resources.apk。miui自己的资源是0x6开头，位于framework-miui-res.apk中。
 
-####编译Smali 代码
+#### 编译Smali 代码
+
 Smali编译过程相对简单，使用apktool b XXX XXX.apk 即可将Smali代码编译成apk或jar包。但是当遇到编译错误时，apktool工具给出的错误信息少之又少，以至于我们只能手动查找哪个文件Samli代码移植错误。  
 这里，我总结了一些Smali代码移植时可能遇到的编译错误。希望对各位有用。   
 
@@ -86,11 +93,14 @@ Smali编译过程相对简单，使用apktool b XXX XXX.apk 即可将Smali代码
 
 每个函数可以使多少变量都在函数体内的第一句.local中声明，例如.local 30表明这个函数可以使用v0~v29，如果使用v30就会编译错误。  
 
-####调试Smali 代码
+#### 调试Smali 代码
+
 调试Smali代码主要任务是解决注入代码后导致的运行时错误。具体的说，就是使注入后的Smali代码通过dalvik虚拟机的字节码校验。获取错误的方法相对简单，使用下面两条命令即可：  
 
-  adb logcat | grep dalvikvm
+```
+  adb logcat | grep dalvikvm  
   adb logcat | grep VFY
+```
 
 其中VFY的信息会给出Smali代码出错的文件、函数以及错误原因，dalvikvm的信息可以给出调用栈，以及上下文执行过程，都比较贴心。  
 

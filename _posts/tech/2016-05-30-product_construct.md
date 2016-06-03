@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 产品的构建一些理解
+title: 产品构建的一些理解
 categories: tech
 tags: 产品 构建 过程 技术
 ---

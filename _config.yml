@@ -10,7 +10,7 @@ keywords: HackerMi
 url: http://www.hackermi.com
 favicon: http://www.hackermi.com/static/favicon.ico
 feed: /atom.xml
-
+gems: [jekyll-paginate]
 
 #Author config
 author:
